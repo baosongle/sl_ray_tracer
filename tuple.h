@@ -14,8 +14,9 @@ public:
     int w;
 
     tuple(double, double, double, int);
-    bool isPoint() const;
-    bool isVector() const;
+    [[nodiscard]] bool isPoint() const;
+    [[nodiscard]] bool isVector() const;
+    bool operator==(const tuple&) const;
 };
 
 tuple point(double x, double y, double z);

@@ -28,4 +28,29 @@ TEST(TupleTest, MakePoint) {
     EXPECT_FALSE(t.isVector());
 }
 
+TEST(TupleTest, PointEqual) {
+    auto a = point(1, 2, 3);
+    auto b = point(1, 2, 3);
+    EXPECT_TRUE(a == b);
+}
+
+TEST(TupleTest, VectorEqual) {
+    auto a = vector(3, 4, 5);
+    auto b = vector(3, 4, 5);
+    EXPECT_TRUE(a == b);
+}
+
+TEST(TupleTest, VectorNotEqualPoint) {
+    auto a = vector(3, 4, 5);
+    auto b = point(3, 4, 5);
+    EXPECT_FALSE(a == b);
+}
+
+TEST(TupleTest, EqualIfDiffEpsilon) {
+    auto a = point(1, 2, 3);
+    auto b = point(1.00000001, 2, 3);
+    EXPECT_FALSE(a.x == b.x);
+    EXPECT_TRUE(a == b);
+}
+
 #endif //SL_RAY_TRACER_TUPLE_TEST_H

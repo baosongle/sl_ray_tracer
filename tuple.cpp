@@ -22,3 +22,13 @@ bool tuple::isPoint() const {
 bool tuple::isVector() const {
     return this->w == 0;
 }
+
+static bool equal(double a, double b) {
+    double const epsilon = 0.00001;
+    double diff = a > b ? a - b : b - a;
+    return diff < epsilon;
+}
+
+bool tuple::operator==(const tuple& t) const {
+    return t.w == this->w && equal(t.x, this->x) && equal(t.y, this->y) && equal(t.z, this->z);
+}
