@@ -49,3 +49,11 @@ tuple tuple::operator-(const tuple & t) const {
 tuple tuple::operator-() const {
     return {-this->x, -this->y, -this->z, -this->w};
 }
+
+tuple tuple::operator*(double a) const {
+    return {this->x * a, this->y * a, this->z * a, this->w};
+}
+
+tuple tuple::operator/(double a) const {
+    return {this->x / a, this->y / a, this->z / a, this->w};
+}

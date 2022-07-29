@@ -103,4 +103,20 @@ TEST(TupleTest, NagatingTuple) {
     EXPECT_EQ(c, vector(-1, -2, -3));
 }
 
+TEST(TupleTest, MultiplyVector) {
+    auto a = vector(1, 2, 3);
+    auto b = a * 3;
+    auto c = a * 0.5;
+
+    EXPECT_EQ(b, vector(3, 6, 9));
+    EXPECT_EQ(c, vector(0.5, 1, 1.5));
+}
+
+TEST(TupleTest, DivideVector) {
+    auto a = vector(1, 2, 3);
+    auto b = a / 2;
+
+    EXPECT_EQ(b, vector(0.5, 1, 1.5));
+}
+
 #endif //SL_RAY_TRACER_TUPLE_TEST_H
