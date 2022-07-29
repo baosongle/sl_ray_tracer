@@ -53,4 +53,40 @@ TEST(TupleTest, EqualIfDiffEpsilon) {
     EXPECT_TRUE(a == b);
 }
 
+TEST(TupleTest, PointAddVectorGetPoint) {
+    auto p = point(3, -2, 5);
+    auto v = vector(-2, 3, 1);
+    auto c = p + v;
+
+    // point add vector get point
+    EXPECT_TRUE(c.isPoint());
+
+    // x, y and z add
+    EXPECT_EQ(1, c.x);
+    EXPECT_EQ(1, c.y);
+    EXPECT_EQ(6, c.z);
+}
+
+TEST(TupleTest, PointAddPointGetPoint) {
+    auto a = point(1, 2, 3);
+    auto b = point(-3, -5, 8);
+    auto c = a + b;
+
+    EXPECT_TRUE(c.isPoint());
+    EXPECT_EQ(-2, c.x);
+    EXPECT_EQ(-3, c.y);
+    EXPECT_EQ(11, c.z);
+}
+
+TEST(TupleTest, VectorAddVectorGetVector) {
+    auto a = vector(-3, 9, 6);
+    auto b = vector(9, -4, -2);
+    auto c = a + b;
+
+    EXPECT_TRUE(c.isVector());
+    EXPECT_EQ(6, c.x);
+    EXPECT_EQ(5, c.y);
+    EXPECT_EQ(4, c.z);
+}
+
 #endif //SL_RAY_TRACER_TUPLE_TEST_H

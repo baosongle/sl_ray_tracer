@@ -17,6 +17,7 @@ public:
     [[nodiscard]] bool isPoint() const;
     [[nodiscard]] bool isVector() const;
     bool operator==(const tuple&) const;
+    tuple operator+(const tuple&) const;
 };
 
 tuple point(double x, double y, double z);

@@ -4,23 +4,26 @@
 
 #include "tuple.h"
 
+static int const POINT = 1;
+static int const VECTOR = 0;
+
 tuple::tuple(double x, double y, double z, int w): x(x), y(y), z(z), w(w) {
 }
 
 tuple point(double x, double y, double z) {
-    return {x, y, z, 1};
+    return {x, y, z, POINT};
 }
 
 tuple vector(double x, double y, double z) {
-    return {x, y, z, 0};
+    return {x, y, z, VECTOR};
 }
 
 bool tuple::isPoint() const {
-    return this->w == 1;
+    return this->w == POINT;
 }
 
 bool tuple::isVector() const {
-    return this->w == 0;
+    return this->w == VECTOR;
 }
 
 static bool equal(double a, double b) {
@@ -31,4 +34,12 @@ static bool equal(double a, double b) {
 
 bool tuple::operator==(const tuple& t) const {
     return t.w == this->w && equal(t.x, this->x) && equal(t.y, this->y) && equal(t.z, this->z);
+}
+
+tuple tuple::operator+(const tuple &t) const {
+    if (this->isVector() && t.isVector()) {
+        return {this->x + t.x, this->y + t.y, this->z + t.z, VECTOR};
+    } else {
+        return {this->x + t.x, this->y + t.y, this->z + t.z, POINT};
+    }
 }
