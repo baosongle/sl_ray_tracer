@@ -67,17 +67,6 @@ TEST(TupleTest, PointAddVectorGetPoint) {
     EXPECT_EQ(6, c.z);
 }
 
-TEST(TupleTest, PointAddPointGetPoint) {
-    auto a = point(1, 2, 3);
-    auto b = point(-3, -5, 8);
-    auto c = a + b;
-
-    EXPECT_TRUE(c.isPoint());
-    EXPECT_EQ(-2, c.x);
-    EXPECT_EQ(-3, c.y);
-    EXPECT_EQ(11, c.z);
-}
-
 TEST(TupleTest, VectorAddVectorGetVector) {
     auto a = vector(-3, 9, 6);
     auto b = vector(9, -4, -2);

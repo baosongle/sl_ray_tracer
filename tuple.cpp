@@ -3,6 +3,7 @@
 //
 
 #include "tuple.h"
+#include <cassert>
 
 static int const POINT = 1;
 static int const VECTOR = 0;
@@ -37,9 +38,6 @@ bool tuple::operator==(const tuple& t) const {
 }
 
 tuple tuple::operator+(const tuple &t) const {
-    if (this->isVector() && t.isVector()) {
-        return {this->x + t.x, this->y + t.y, this->z + t.z, VECTOR};
-    } else {
-        return {this->x + t.x, this->y + t.y, this->z + t.z, POINT};
-    }
+    assert(!(this->isPoint() && t.isPoint()));
+    return {this->x + t.x, this->y + t.y, this->z + t.z, this->w + t.w};
 }
