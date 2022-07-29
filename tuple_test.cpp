@@ -89,4 +89,12 @@ TEST(TupleTest, VectorAddVectorGetVector) {
     EXPECT_EQ(4, c.z);
 }
 
+TEST(TupleTest, PointSubstractPointGetVector) {
+    auto a = point(1, 2, 3);
+    auto b = point(5, 6, 7);
+    auto c = a - b;
+
+    EXPECT_EQ(c, vector(-4, -4, -4));
+}
+
 #endif //SL_RAY_TRACER_TUPLE_TEST_H
