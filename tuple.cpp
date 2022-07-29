@@ -41,3 +41,7 @@ tuple tuple::operator+(const tuple &t) const {
     assert(!(this->isPoint() && t.isPoint()));
     return {this->x + t.x, this->y + t.y, this->z + t.z, this->w + t.w};
 }
+
+tuple tuple::operator-(const tuple & t) const {
+    return {this->x - t.x, this->y - t.y, this->z - t.z, this->w - t.w};
+}

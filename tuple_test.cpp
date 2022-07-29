@@ -86,4 +86,13 @@ TEST(TupleTest, PointSubstractPointGetVector) {
     EXPECT_EQ(c, vector(-4, -4, -4));
 }
 
+TEST(TupleTest, VectorSubtractVectorGetVector) {
+    auto a = vector(1, 4, 3);
+    auto b = vector(2, 3, 1);
+    auto c = a - b;
+
+    EXPECT_TRUE(c.isVector());
+    EXPECT_EQ(c, vector(-1, 1, 2));
+}
+
 #endif //SL_RAY_TRACER_TUPLE_TEST_H
