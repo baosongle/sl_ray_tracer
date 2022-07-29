@@ -19,6 +19,7 @@ public:
     bool operator==(const tuple&) const;
     tuple operator+(const tuple&) const;
     tuple operator-(const tuple&) const;
+    tuple operator-() const;
 };
 
 tuple point(double x, double y, double z);

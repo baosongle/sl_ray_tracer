@@ -95,4 +95,12 @@ TEST(TupleTest, VectorSubtractVectorGetVector) {
     EXPECT_EQ(c, vector(-1, 1, 2));
 }
 
+TEST(TupleTest, NagatingTuple) {
+    auto a = vector(1, 2, 3);
+    auto c = -a;
+
+    EXPECT_TRUE(c.isVector());
+    EXPECT_EQ(c, vector(-1, -2, -3));
+}
+
 #endif //SL_RAY_TRACER_TUPLE_TEST_H

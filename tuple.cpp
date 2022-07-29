@@ -45,3 +45,7 @@ tuple tuple::operator+(const tuple &t) const {
 tuple tuple::operator-(const tuple & t) const {
     return {this->x - t.x, this->y - t.y, this->z - t.z, this->w - t.w};
 }
+
+tuple tuple::operator-() const {
+    return {-this->x, -this->y, -this->z, -this->w};
+}
