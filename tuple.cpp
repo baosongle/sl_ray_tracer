@@ -4,6 +4,7 @@
 
 #include "tuple.h"
 #include <cassert>
+#include <cmath>
 
 static int const POINT = 1;
 static int const VECTOR = 0;
@@ -56,4 +57,8 @@ tuple tuple::operator*(double a) const {
 
 tuple tuple::operator/(double a) const {
     return {this->x / a, this->y / a, this->z / a, this->w};
+}
+
+double tuple::magnitude() const {
+    return sqrt(this->x * this->x + this->y * this->y + this->z * this->z);
 }

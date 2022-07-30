@@ -7,6 +7,7 @@
 
 #include <gtest/gtest.h>
 #include "tuple.h"
+#include <cmath>
 
 TEST(TupleTest, MakeVector) {
     tuple t = vector(4.3, -4.2, 3.1);
@@ -117,6 +118,11 @@ TEST(TupleTest, DivideVector) {
     auto b = a / 2;
 
     EXPECT_EQ(b, vector(0.5, 1, 1.5));
+}
+
+TEST(TupleTest, ComputeMagnitude) {
+    auto a = vector(2, 1, 5);
+    EXPECT_EQ(sqrt(30), a.magnitude());
 }
 
 #endif //SL_RAY_TRACER_TUPLE_TEST_H

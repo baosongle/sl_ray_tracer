@@ -16,6 +16,7 @@ public:
     tuple(double, double, double, int);
     [[nodiscard]] bool isPoint() const;
     [[nodiscard]] bool isVector() const;
+    [[nodiscard]] double magnitude() const;
     bool operator==(const tuple&) const;
     tuple operator+(const tuple&) const;
     tuple operator-(const tuple&) const;
