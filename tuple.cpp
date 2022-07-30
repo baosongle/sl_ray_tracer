@@ -67,3 +67,9 @@ tuple tuple::normalize() const {
     auto m = this->magnitude();
     return *this / m;
 }
+
+double tuple::operator*(const tuple &t) const {
+    assert(this->isVector());
+    assert(t.isVector());
+    return this->x * t.x + this->y * t.y + this->z * t.z;
+}

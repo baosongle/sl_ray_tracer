@@ -21,6 +21,7 @@ public:
     bool operator==(const tuple&) const;
     tuple operator+(const tuple&) const;
     tuple operator-(const tuple&) const;
+    double operator*(const tuple&) const;
     tuple operator-() const;
     tuple operator*(double) const;
     tuple operator/(double) const;

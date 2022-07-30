@@ -145,4 +145,12 @@ TEST(TupleTest, NormalizeTuple2) {
     EXPECT_TRUE(b.isVector());
 }
 
+TEST(TupleTest, DotProduct) {
+    auto a = vector(1, 2, 3);
+    auto b = vector(11, 12, 13);
+    auto c = a * b;
+
+    EXPECT_EQ(74, c);
+}
+
 #endif //SL_RAY_TRACER_TUPLE_TEST_H
