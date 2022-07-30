@@ -9,7 +9,7 @@
 static int const POINT = 1;
 static int const VECTOR = 0;
 
-tuple::tuple(double x, double y, double z, int w): x(x), y(y), z(z), w(w) {
+tuple::tuple(double x, double y, double z, int w) : x(x), y(y), z(z), w(w) {
 }
 
 tuple point(double x, double y, double z) {
@@ -34,7 +34,7 @@ static bool equal(double a, double b) {
     return diff < epsilon;
 }
 
-bool tuple::operator==(const tuple& t) const {
+bool tuple::operator==(const tuple &t) const {
     return t.w == this->w && equal(t.x, this->x) && equal(t.y, this->y) && equal(t.z, this->z);
 }
 
@@ -43,7 +43,7 @@ tuple tuple::operator+(const tuple &t) const {
     return {this->x + t.x, this->y + t.y, this->z + t.z, this->w + t.w};
 }
 
-tuple tuple::operator-(const tuple & t) const {
+tuple tuple::operator-(const tuple &t) const {
     return {this->x - t.x, this->y - t.y, this->z - t.z, this->w - t.w};
 }
 
