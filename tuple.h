@@ -17,6 +17,7 @@ public:
     [[nodiscard]] bool isPoint() const;
     [[nodiscard]] bool isVector() const;
     [[nodiscard]] double magnitude() const;
+    [[nodiscard]] tuple normalize() const;
     bool operator==(const tuple&) const;
     tuple operator+(const tuple&) const;
     tuple operator-(const tuple&) const;

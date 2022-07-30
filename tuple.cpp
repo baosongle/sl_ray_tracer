@@ -62,3 +62,8 @@ tuple tuple::operator/(double a) const {
 double tuple::magnitude() const {
     return sqrt(this->x * this->x + this->y * this->y + this->z * this->z);
 }
+
+tuple tuple::normalize() const {
+    auto m = this->magnitude();
+    return *this / m;
+}

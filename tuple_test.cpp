@@ -125,4 +125,24 @@ TEST(TupleTest, ComputeMagnitude) {
     EXPECT_EQ(sqrt(30), a.magnitude());
 }
 
+TEST(TupleTest, NormalizeTuple) {
+    auto a = vector(3, 0, 0);
+    auto b = a.normalize();
+
+    EXPECT_EQ(1, b.x);
+    EXPECT_EQ(0, b.y);
+    EXPECT_EQ(0, b.z);
+    EXPECT_TRUE(b.isVector());
+}
+
+TEST(TupleTest, NormalizeTuple2) {
+    auto a = vector(5, 6, 7);
+    auto b = a.normalize();
+
+    EXPECT_EQ(5 / sqrt(110), b.x);
+    EXPECT_EQ(6 / sqrt(110), b.y);
+    EXPECT_EQ(7 / sqrt(110), b.z);
+    EXPECT_TRUE(b.isVector());
+}
+
 #endif //SL_RAY_TRACER_TUPLE_TEST_H
