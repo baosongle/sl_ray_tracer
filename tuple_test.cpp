@@ -153,4 +153,12 @@ TEST(TupleTest, DotProduct) {
     EXPECT_EQ(74, c);
 }
 
+TEST(TupleTest, CrossProduct) {
+    auto a = vector(1, 2, 3);
+    auto b = vector(2, 3, 4);
+
+    EXPECT_EQ(a.cross(b), vector(-1, 2, -1));
+    EXPECT_EQ(b.cross(a), vector(1, -2, 1));
+}
+
 #endif //SL_RAY_TRACER_TUPLE_TEST_H

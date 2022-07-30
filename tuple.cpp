@@ -73,3 +73,11 @@ double tuple::operator*(const tuple &t) const {
     assert(t.isVector());
     return this->x * t.x + this->y * t.y + this->z * t.z;
 }
+
+tuple tuple::cross(const tuple &t) const {
+    return vector(
+            this->y * t.z - this->z * t.y,
+            this->z * t.x - this->x * t.z,
+            this->x * t.y - this->y * t.x
+    );
+}

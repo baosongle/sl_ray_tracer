@@ -18,6 +18,7 @@ public:
     [[nodiscard]] bool isVector() const;
     [[nodiscard]] double magnitude() const;
     [[nodiscard]] tuple normalize() const;
+    [[nodiscard]] tuple cross(const tuple&) const;
     bool operator==(const tuple&) const;
     tuple operator+(const tuple&) const;
     tuple operator-(const tuple&) const;
