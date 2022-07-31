@@ -20,6 +20,7 @@ public:
     [[nodiscard]] int getHeight() const;
     [[nodiscard]] color getColorAt(int, int) const;
     void writeColor(color, int, int);
+    void toFile(const std::string&) const;
 };
 
 

@@ -25,3 +25,11 @@ TEST(CanvasTest, WritePixel) {
     a.writeColor(red, 2, 3);
     EXPECT_EQ(red, a.getColorAt(2, 3));
 }
+
+TEST(CanvasTest, WriteToFile) {
+    auto a = canvas(5, 3);
+    a.writeColor(color(1.5, 0, 0), 0, 0);
+    a.writeColor(color(0, 0.5, 0), 2, 1);
+    a.writeColor(color(-0.5, 0, 1), 4, 2);
+    a.toFile("/Users/baosongle/canvas.ppm");
+}
