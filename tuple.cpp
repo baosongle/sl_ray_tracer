@@ -81,3 +81,26 @@ tuple tuple::cross(const tuple &t) const {
             this->x * t.y - this->y * t.x
     );
 }
+
+color::color(double red, double green, double blue): tuple(red, green, blue, 0) {
+}
+
+double color::red() const {
+    return this->x;
+}
+
+double color::green() const {
+    return this->y;
+}
+
+double color::blue() const {
+    return this->z;
+}
+
+bool color::operator==(const color &t) const {
+    return equal(this->red(), t.red()) && equal(this->blue(), t.blue()) && equal(this->green(), t.green());
+}
+
+color color::operator*(const color &t) const {
+    return {this->red() * t.red(), this->green() * t.green(), this->blue() * t.blue()};
+}

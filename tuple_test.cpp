@@ -161,4 +161,25 @@ TEST(TupleTest, CrossProduct) {
     EXPECT_EQ(b.cross(a), vector(1, -2, 1));
 }
 
+TEST(TupleTest, MakeColor) {
+    auto a = color(-0.5, 0.4, 1.7);
+    EXPECT_EQ(-0.5, a.red());
+    EXPECT_EQ(0.4, a.green());
+    EXPECT_EQ(1.7, a.blue());
+}
+
+TEST(TupleTest, AddColor) {
+    auto a = color(0.9, 0.6, 0.75);
+    auto b = color(0.7, 0.1, 0.25);
+    auto c = a + b;
+    EXPECT_EQ(c, color(1.6, 0.7, 1));
+}
+
+TEST(TupleTest, MultiplyingColor) {
+    auto a = color(1, 0.2, 0.4);
+    auto b = color(0.9, 1, 0.1);
+    auto c = a * b;
+    EXPECT_EQ(c, color(0.9, 0.2, 0.04));
+}
+
 #endif //SL_RAY_TRACER_TUPLE_TEST_H

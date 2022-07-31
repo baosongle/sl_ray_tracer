@@ -31,4 +31,16 @@ public:
 tuple point(double x, double y, double z);
 tuple vector(double x, double y, double z);
 
+class color : public tuple {
+public:
+    color(double, double, double);
+    [[nodiscard]] double red() const;
+    [[nodiscard]] double green() const;
+    [[nodiscard]] double blue() const;
+
+    bool operator==(const color&) const;
+    color operator*(const color&) const;
+};
+
+
 #endif //SL_RAY_TRACER_TUPLE_H
