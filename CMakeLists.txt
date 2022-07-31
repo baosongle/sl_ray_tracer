@@ -13,7 +13,7 @@ FetchContent_Declare(
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
 
-add_executable(sl_ray_tracer main.cpp tuple.cpp tuple.h)
+add_executable(sl_ray_tracer main.cpp tuple.cpp tuple.h canvas.cpp canvas.h)
 
 enable_testing()
 
@@ -24,6 +24,17 @@ add_executable(
 )
 target_link_libraries(
         tuple_test
+        GTest::gtest_main
+)
+
+add_executable(
+        canvas_test
+        canvas_test.cpp
+        canvas.cpp
+        tuple.cpp
+)
+target_link_libraries(
+        canvas_test
         GTest::gtest_main
 )
 
