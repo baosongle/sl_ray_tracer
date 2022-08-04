@@ -38,5 +38,15 @@ target_link_libraries(
         GTest::gtest_main
 )
 
+add_executable(
+        matrix_test
+        matrix_test.cpp
+        matrix.cpp
+)
+target_link_libraries(
+        matrix_test
+        GTest::gtest_main
+)
+
 include(GoogleTest)
 gtest_discover_tests(tuple_test)

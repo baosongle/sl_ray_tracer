@@ -4,7 +4,6 @@
 
 #include "canvas.h"
 #include <cassert>
-#include <string>
 #include <fstream>
 
 canvas::canvas(int w, int h) {

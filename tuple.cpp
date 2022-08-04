@@ -3,6 +3,7 @@
 //
 
 #include "tuple.h"
+#include "epsilon.h"
 #include <cassert>
 #include <cmath>
 
@@ -28,14 +29,8 @@ bool tuple::isVector() const {
     return this->w == VECTOR;
 }
 
-static bool equal(double a, double b) {
-    double const epsilon = 0.00001;
-    double diff = a > b ? a - b : b - a;
-    return diff < epsilon;
-}
-
 bool tuple::operator==(const tuple &t) const {
-    return t.w == this->w && equal(t.x, this->x) && equal(t.y, this->y) && equal(t.z, this->z);
+    return t.w == w && equal(t.x, x) && equal(t.y, y) && equal(t.z, z);
 }
 
 tuple tuple::operator+(const tuple &t) const {
