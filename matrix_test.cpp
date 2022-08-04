@@ -53,3 +53,39 @@ TEST(MatrixTest, CreateMatrix3x3) {
     EXPECT_TRUE(equal(1.0, m.get(2, 1)));
     EXPECT_TRUE(equal(1.0, m.get(2, 2)));
 }
+
+TEST(MatrixText, MatrixEquality1) {
+    auto a = matrix(
+            4, 4,
+            1.0, 2.0, 3.0, 4.0,
+            5.0, 6.0, 7.0, 8.0,
+            9.0, 8.0, 7.0, 6.0,
+            5.0, 4.0, 3.0, 2.0
+            );
+    auto b = matrix(
+            4, 4,
+            1.0, 2.0, 3.0, 4.0,
+            5.0, 6.0, 7.0, 8.0,
+            9.0, 8.0, 7.0, 6.0,
+            5.0, 4.0, 3.0, 2.0
+    );
+    EXPECT_EQ(a, b);
+}
+
+TEST(MatrixText, MatrixEquality2) {
+    auto a = matrix(
+            4, 4,
+            0.0, 2.0, 3.0, 4.0,
+            5.0, 6.0, 7.0, 8.0,
+            9.0, 8.0, 7.0, 6.0,
+            5.0, 4.0, 3.0, 2.0
+    );
+    auto b = matrix(
+            4, 4,
+            1.0, 2.0, 3.0, 4.0,
+            5.0, 6.0, 7.0, 8.0,
+            9.0, 8.0, 7.0, 6.0,
+            5.0, 4.0, 3.0, 2.0
+    );
+    EXPECT_TRUE(a != b);
+}

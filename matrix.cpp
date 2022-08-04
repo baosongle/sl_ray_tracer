@@ -21,3 +21,7 @@ matrix::matrix(unsigned int a, unsigned int b, ...) {
 double matrix::get(unsigned int a, unsigned int b) {
     return elements[a * col + b];
 }
+
+bool matrix::operator==(const matrix &m) const {
+    return row == m.row && col == m.col && elements == m.elements;
+}

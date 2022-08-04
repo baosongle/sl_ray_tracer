@@ -16,6 +16,7 @@ private:
 public:
     matrix(unsigned a, unsigned b, ...);
     double get(unsigned a, unsigned b);
+    bool operator==(const matrix &m) const;
 };
 
 
